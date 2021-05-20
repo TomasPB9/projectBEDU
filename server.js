@@ -9,7 +9,7 @@
 
 //comando para crear las migraciones
 // ./node_modules/.bin/sequelize db:migrate
-
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const helmet = require('helmet');
@@ -26,3 +26,5 @@ app.use('/api', require('./routes'));
 app.listen(process.env.PORT, () => {
   console.log(`Express on port ${process.env.PORT}`);
 });
+
+//Pasos git

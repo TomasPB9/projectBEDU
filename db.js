@@ -5,7 +5,6 @@ const Product = require('./models/Product');
 const Review = require('./models/Review');
 const User = require('./models/user');
 const Course = require('./models/course');
-const Enrolment = require('./models/enrolment');
 const Teacher = require('./models/teacher');
 
 // Database connection
@@ -23,7 +22,6 @@ const models = [
   Review,
   User,
   Course,
-  Enrolment,
   Teacher,
 ];
 
