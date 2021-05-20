@@ -4,7 +4,6 @@ const { Sequelize } = require('sequelize');
 const Product = require('./models/Product');
 const Review = require('./models/Review');
 const User = require('./models/user');
-const Course = require('./models/course');
 const Teacher = require('./models/teacher');
 
 // Database connection
@@ -21,7 +20,6 @@ const models = [
   Product,
   Review,
   User,
-  Course,
   Teacher,
 ];
 
