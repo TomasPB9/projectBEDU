@@ -9,12 +9,13 @@ const Enrolment = require('./models/enrolment');
 const Teacher = require('./models/teacher');
 
 // Database connection
-const sequelize = new Sequelize('projectschool', 'root', '12345Facil', {
-  host: '127.0.0.1',
-  dialect: 'mysql',
+const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  dialect: process.env.DIALECT,
   logging: false,
-  port: 3306
 });
+
 
 // Getting models
 const models = [
@@ -32,7 +33,7 @@ for (let model of models) {
 }
 
 // {force: true } fuerza migracion, para no borrar lo que  tengo regreso el force a false
-sequelize.sync({ force: true })
+sequelize.sync({ force: false })
     .then(() => console.log("Tableas creadas"));
 
 

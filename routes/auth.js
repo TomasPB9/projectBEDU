@@ -20,9 +20,9 @@ router.post('/login', async (req, res) => {
     // Generate a token
     //secretkey debe coincidir con el mismo texto el authentication.js
     //jwt.sign({ userId: user.id } ahi podemos pasar parametros para descrbir el token
-    const token = jwt.sign({ userId: user.id }, 'secretkey', {
+    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRETKEY, {
       //token valido durante 10 horas
-      expiresIn: "10h",
+      expiresIn: process.env.JWT_EXPIRESIN,
     });
 
     return res.json({
