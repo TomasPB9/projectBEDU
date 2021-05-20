@@ -29,8 +29,8 @@ for (let model of models) {
 }
 
 // {force: true } fuerza migracion, para no borrar lo que  tengo regreso el force a false
-sequelize.sync({ force: false })
-    .then(() => console.log("Tableas creadas"));
+// sequelize.sync({ force: false })
+//     .then(() => console.log("Tableas creadas"));
 
 
 // Configuring relations
