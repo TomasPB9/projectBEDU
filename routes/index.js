@@ -10,7 +10,8 @@ router.use('/auth', require('./auth'));
 router.use('/users', require('./users'));
 router.use('/reviews', require('./reviews'));
 router.use('/products', authenticate, require('./products'));
-router.use('/courses', require('./courses'));
+router.use('/courses', authenticate, require('./courses'));
+router.use('/enrolments', authenticate, require('./enrolments'));
 
 
 module.exports = router;
