@@ -7,9 +7,10 @@ const authenticate = require('../middlewares/authentication');
 // Add the required routes
 // authenticate => indica que rutas necesitan autenticacion para ingresar (va al middleware authentication)
 router.use('/auth', require('./auth'));
-router.use('/products', authenticate, require('./products'));
-router.use('/reviews', require('./reviews'));
 router.use('/users', require('./users'));
-router.use('/teachers', authenticate, require('./teachers'));
+router.use('/reviews', require('./reviews'));
+router.use('/products', authenticate, require('./products'));
+router.use('/courses', require('./courses'));
+
 
 module.exports = router;

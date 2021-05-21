@@ -4,7 +4,7 @@ const { Sequelize } = require('sequelize');
 const Product = require('./models/product');
 const Review = require('./models/review');
 const User = require('./models/user');
-const Teacher = require('./models/teacher');
+const Course = require('./models/course');
 
 // Database connection
 const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
@@ -20,7 +20,7 @@ const models = [
   Product,
   Review,
   User,
-  Teacher,
+  Course,
 ];
 
 // Registering models into Sequelize
@@ -28,9 +28,9 @@ for (let model of models) {
   model(sequelize);
 }
 
-// {force: true } fuerza migracion, para no borrar lo que  tengo regreso el force a false
-// sequelize.sync({ force: false })
-//     .then(() => console.log("Tableas creadas"));
+//{force: true } fuerza migracion, para no borrar lo que  tengo regreso el force a false
+//  sequelize.sync({ force: true })
+//      .then(() => console.log("Tableas creadas"));
 
 
 // Configuring relations
