@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 });
 
 // Create a new courses
-router.post('/newcourse',  async (req, res) => {
+router.post('/',  async (req, res) => {
   const { body } = req;
   const course = await sequelize.models.courses.create({
     name: body.name,
