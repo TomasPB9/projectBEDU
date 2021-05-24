@@ -4,13 +4,13 @@ const sequelize = require('../db');
 const permission = require('../middlewares/permission');
 
 // Get all courses
-router.get('/', permission('admin', 'client'), async (req, res) => {
+router.get('/', async (req, res) => {
   const courses = await sequelize.models.courses.findAndCountAll();
   return res.status(200).json({ data: courses });
 });
 
 // Create a new courses
-router.post('/', permission('admin', 'client'), async (req, res) => {
+router.post('/',  async (req, res) => {
   const { body } = req;
   const course = await sequelize.models.courses.create({
     name: body.name,
