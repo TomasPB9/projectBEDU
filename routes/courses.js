@@ -24,7 +24,7 @@ router.post('/',  async (req, res) => {
 });
 
 //Update a course by id
-router.put('/:id', permission('admin', 'client'), async (req, res) => {
+router.put('/:id', async (req, res) => {
   const { body, params: { id } } = req;
   const course = await sequelize.models.courses.findByPk(id);
   if(!course) {
