@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 });
 
 // Create a new courses
-router.post('/',  async (req, res) => {
+router.post('/', permission('admin'),  async (req, res) => {
   const { body } = req;
   const course = await sequelize.models.courses.create({
     name: body.name,
@@ -41,7 +41,7 @@ router.put('/:id', async (req, res) => {
 });
 
 //Delete a course by ID
-router.delete('/:id', permission('admin', 'client'), async(req, res) => {
+router.delete('/:id', permission('admin'), async(req, res) => {
   const { params: { id } } = req;
   const course = await sequelize.models.courses.findByPk(id);
   if(!course) {

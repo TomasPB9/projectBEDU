@@ -42,14 +42,14 @@ router.post('/signup', async (req, res) => {
       return res.status(401).json({ message: 'this email is already registered' });
     }
 
-    // Creating the user
+    // Creating the users
     user = await sequelize.models.users.create({
         name: body.name,
         lastname: body.lastname,
         email: body.email,
         password: body.password,
         //el sistema por default pone type client a todos los nuevos usuarios
-        type: 'admin',
+        type: 'client',
     })
 
     // Saving user
