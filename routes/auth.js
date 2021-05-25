@@ -44,13 +44,15 @@ router.post('/signup', async (req, res) => {
 
     // Creating the users
     user = await sequelize.models.users.create({
-        name: body.name,
-        lastname: body.lastname,
-        email: body.email,
-        password: body.password,
-        //el sistema por default pone type client a todos los nuevos usuarios
-        type: 'client',
-    })
+      name: body.name,
+      lastname: body.lastname,
+      email: body.email,
+      password: body.password,
+      //el sistema por default pone type client a todos los nuevos usuarios
+      type: "client",
+      // para que le usuario decida que tipo de usuario ser, y si no pone nada se pone tipo client por default
+      // type: body.type 11 "client";
+    });
 
     // Saving user
     await user.save();

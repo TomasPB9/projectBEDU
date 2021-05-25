@@ -52,9 +52,4 @@ router.delete('/:id', permission('admin'), async(req, res) => {
 });
 
 
-
-
-
-
-
 module.exports = router;
