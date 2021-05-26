@@ -49,7 +49,7 @@ router.post('/signup', async (req, res) => {
       email: body.email,
       password: body.password,
       //el sistema por default pone type client a todos los nuevos usuarios
-      type: "client",
+      type: body.type || "client",
       // para que le usuario decida que tipo de usuario ser, y si no pone nada se pone tipo client por default
       // type: body.type 11 "client";
     });
